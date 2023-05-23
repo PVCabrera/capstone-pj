@@ -5813,40 +5813,4 @@ const nationalParksArray = [
   },
 ];
 
-function stateChange(stateSelection) {
-  const parentElement = document.querySelector("main");
-  console.log(parentElement)
-  
-  // Will add text to parent element in main tag
 
-  nationalParksArray.forEach((state) => {
-    let locationItem = document.createElement("text");
-    // will attachents from object to eachother
-    let locationItemText = document.createTextNode(
-      `${state.LocationName} \n 
-      ${state.Address} \n 
-      ${state.City} \n
-      ${state.State} \n
-      ${state.Address} \n
-      ${state.Visit}`);
-      locationItem.append(locationItemText)
-      parentElement.append(locationItem);
-    });
-
-
-}
-
-// function getInfoFromParkDataObjects(stateNames) {
-//   let locationItemText = document.createTextNode(
-//     `${stateNames.LocationName}\n
-//           ${stateNames.Address}\n
-//           ${stateNames.City}\n
-//           ${stateNames.State}\n
-//           ${stateNames.Address}\n
-//           ${stateNames.Visit}`
-//   );
-
-//   nationalParksArray.forEach(function (stateSelection) {
-//     if (stateSelection === stateNames) return locationItemText;
-//   });
-// }

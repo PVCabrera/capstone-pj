@@ -17,6 +17,7 @@
     crossorigin="anonymous"></script>
   <!-- JS Script -->
   <script defer src="../mountain-page/mountainData.js"></script>
+  <script defer src="../mountain-page/mainMountain.js"></script>
 
 </head>
 
@@ -33,6 +34,19 @@
       <li><a href="../national-pk-search/index.html">National Park Info</a></li>
     </ul>
   </nav>
+  <!-- Dropdown page -->
+  <label for="mountain-selection">Search by name:</label>
+  <select name="mountain-selection" id="mountain-selection">
+    <option value="">Search by mountain name</option>
+  </select>
+  <label for="mountain-effort">Search by effort:</label>
+  <select name="mountain-effort" id="mountain-effort">
+    <option value="">select</option>
+  </select>
+ 
+  <!-- Data from national park page -->
+  <h3>Mountain Information</h3>
+  <main></main>
 
 </body>
 </html>

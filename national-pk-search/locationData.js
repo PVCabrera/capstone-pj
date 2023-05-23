@@ -57,17 +57,4 @@ const locationsArray = [
   "Wyoming",
 ];
 
-function loadStatesDropdownList(locationArrayStateSelections) {
-  let stateNames = "";
-  for (i = 0; i < locationArrayStateSelections.length; i += 1) {
-    stateNames += `<option>${locationArrayStateSelections[i]}</option>`;
-  }
-  return stateNames;
-}
-
-function addStatesToDropdownList() {
-  const selectStateElement = (document.querySelector("#state-selection").innerHTML =
-  loadStatesDropdownList(locationsArray));
-  selectStateElement.onchange = stateChange;
-}
 
