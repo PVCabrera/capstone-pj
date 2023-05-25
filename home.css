@@ -1,6 +1,9 @@
 @font-face {
   font-family: 'North Face' ;
   src: url(../capstone-pj/fonts/north-face/NorthFace.ttf);
+  
+  font-family: 'Autumn';
+  src: url(../capstone-pj/fonts/meditative/Meditative.ttf)
 }
 
 body{
@@ -13,13 +16,13 @@ h1 {
   margin-top: 1rem;
   font-family: 'North Face';
   color: #adb836;
-  margin: 2rem;
+  margin-bottom:0;
   text-align: center;
 }
 
 .body-text {
   display: flex;
-  margin: 2rem 5rem 5rem 5rem;
+  margin: 2rem 5rem 5rem;
   color: antiquewhite;
   font-size: large;
   text-align: center;
@@ -38,7 +41,86 @@ h1 {
 }
 
 h3{
+  font-family: 'Autumn';
   margin-left: 2rem;
   margin-right: 2rem;
+  text-align: center;
+  color: antiquewhite;
 }
+
+.fa-person-hiking {
+  color: #c8d41d;
+}
+
+.knife{
+  display: flex;
+  justify-content: center;
+  padding-right: 3rem;
+}
+
+footer {
+  background-color: #02000089;
+  padding: 20px;
+  text-align: center;
+  margin-left: auto;
+  margin-top: auto;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-links {
+  width: 25%;
+  text-align: left;
+}
+
+.footer-links h3 {
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.footer-links ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 5px;
+}
+
+.footer-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-family: "Futura";
+}
+
+.footer-logo {
+  text-align: center;
+  max-width: 8rem;
+  margin-top: 1rem;
+}
+
+.footer-logo img {
+  max-width: 100%;
+  height: auto;
+}
+
+.footer-copyright {
+  width: 50%;
+  text-align: center;
+  padding-right: 10rem;
+  font-size: 14px;
+  color: #666;
+}
+
+
+
 

@@ -1,0 +1,114 @@
+html {
+  height: 100%;
+}
+@font-face {
+  font-family: "Preparatori-Bold";
+  src: url(../fonts/preparatori/Preparatori-Bold.ttf);
+}
+
+body {
+  min-height: 100%;
+  background-image: url(../national-pk-search/images-national/miguel-carraca-Yfbg-D-9kjo-unsplash.jpg);
+  background-color: rgb(143, 112, 52);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.select-items {
+  display: flex;
+  justify-content: center;
+}
+
+.title-name {
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+h3 {
+  margin-top: 3rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+#main {
+  text-align: center;
+  margin-left: 2rem;
+  padding-top: 2rem;
+  margin-right: 2rem;
+  color: rgb(245, 243, 240);
+  font-weight: 600;
+}
+
+h2 {
+  font-family: "Preparatori-Bold";
+  font-size: 3rem;
+}
+
+footer {
+  background-color: #02000089;
+  padding:20px;
+  padding-bottom:2rem;
+  /* text-align: center; */
+  margin-left: auto;
+  margin-bottom: 0;
+  margin-top: auto;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-links {
+  width: 25%;
+  text-align: left;
+}
+
+.footer-links h3 {
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.footer-links ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 5px;
+}
+
+.footer-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-family: "Futura";
+}
+
+.footer-logo {
+  text-align: center;
+  max-width: 8rem;
+  margin-top: 1rem;
+}
+
+.footer-logo img {
+  max-width: 100%;
+  height: auto;
+}
+
+.footer-copyright {
+  width: 50%;
+  text-align: center;
+  padding-right: 10rem;
+  font-size: 14px;
+  color: #666;
+}
+
+.fa-person-hiking {
+  color: #fff;
+}

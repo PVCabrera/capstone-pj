@@ -38,29 +38,31 @@ function stateChange(changeEvent) {
   parentElement.replaceChildren();
 
   matchedState.forEach((element) => {
-    // assigned variables from array
-    let localName = element.LocationName != null ? element.LocationName : "";
-    let localCity = element.City != null ? element.City : "";
-    let localState = element.State != null ? element.State : "";
-    let localAddress = element.Address != null ? element.Address : "";
-    let localVisit = element.Visit != null ? element.Visit : "";
-    let locationItem = document.createElement("p");
-    
-    // style p tags with css
-    locationItem.classList.add('parkBlock')
+    const parkDeets = document.createElement("div");
+    parkDeets.classList.add("parkDeets");
 
-    let i;
-    const out = document.getElementById("main");
-    const args = [localName, localCity, localState, localAddress, localVisit];
+    const localName = document.createElement("h2");
+    localName.innerText = element.LocationName;
+    parkDeets.appendChild(localName);
 
-    function parkFormat() {
-      for (i = 0; i < args.length; i++) {
-        locationItem.appendChild(document.createTextNode(args[i]));
-        locationItem.appendChild(document.createElement("br"));
-      }
+    const localCity = document.createElement("p");
+    localCity.innerText = `City: ${element.City}`;
+    parkDeets.appendChild(localCity);
+
+    const localState = document.createElement("p");
+    localState.innerText = `State: ${element.State}`;
+    parkDeets.appendChild(localState);
+
+    const localAddress = document.createElement("p");
+    localAddress.innerText = `Address: ${element.Address}`;
+    parkDeets.appendChild(localAddress);
+
+    if (element.Visit !== undefined) {
+      const elementVisit = document.createElement("p");
+      elementVisit.innerText = `Visit: ${element.Visit}`;
+      parkDeets.appendChild(elementVisit);
     }
-    parkFormat(args);
-    out.appendChild(locationItem)
+    parentElement.appendChild(parkDeets);
   });
 }
 
@@ -104,45 +106,33 @@ function parkChange(changeEvent) {
   // Replace selections on change
   parentElement.replaceChildren();
 
-  // matchedParkType.forEach((element) => {
-  //   let locationItem = document.createElement("p");
-  //   let locationItemText = document.createTextNode(
-  //     `${element.LocationName}\n${element.City}\n
-  //     ${element.State}\n${element.Address}\n
-  //     ${element.Visit}`
-  //   );
-  //   // Adds elements and text node to each other
-  //   locationItem.append(locationItemText);
-  //   parentElement.append(locationItem);
-  // });
+  matchedParkType.forEach((element) => {
+    const parkDeets = document.createElement("div");
+    parkDeets.classList.add("parkDeets");
 
-  matchedPark.forEach((element) => {
-    // assigned variables from array
-    let localName = element.LocationName != null ? element.LocationName : "";
-    let localCity = element.City != null ? element.City : "";
-    let localState = element.State != null ? element.State : "";
-    let localAddress = element.Address != null ? element.Address : "";
-    let localVisit = element.Visit != null ? element.Visit : "";
-    let locationItem = document.createElement("p");
-    
-    // style p tags with css
-    locationItem.classList.add('parkBlock')
+    const localName = document.createElement("h2");
+    localName.innerText = element.LocationName;
+    parkDeets.appendChild(localName);
 
-    let i;
-    const out = document.getElementById("main");
-    const args = [localName, localCity, localState, localAddress, localVisit];
+    const localCity = document.createElement("p");
+    localCity.innerText = `City: ${element.City}`;
+    parkDeets.appendChild(localCity);
 
-    function parkFormat() {
-      for (i = 0; i < args.length; i++) {
-        locationItem.appendChild(document.createTextNode(args[i]));
-        locationItem.appendChild(document.createElement("br"));
-      }
+    const localState = document.createElement("p");
+    localState.innerText = `State: ${element.State}`;
+    parkDeets.appendChild(localState);
+
+    const localAddress = document.createElement("p");
+    localAddress.innerText = `Address: ${element.Address}`;
+    parkDeets.appendChild(localAddress);
+
+    if (element.Visit !== undefined) {
+      const elementVisit = document.createElement("p");
+      elementVisit.innerText = `Visit: ${element.Visit}`;
+      parkDeets.appendChild(elementVisit);
     }
-    parkFormat(args);
-    out.appendChild(locationItem)
+    parentElement.appendChild(parkDeets);
   });
-
-
 }
 
 function filterParkTypeByData(selectedParkByUser) {
@@ -155,3 +145,19 @@ function filterParkTypeByData(selectedParkByUser) {
 // -------------------------------------------------------------------------
 
 // Search using both boxes
+
+// function selectedPark() {
+//   const selectedPark = document.querySelector("#parks").value;
+//   const selectedState = document.querySelector("#state").value;
+
+//   const parkDisplayData = filterParkData(selectedPark, selectedState);
+//   displayData(parkDisplayData);
+// }
+
+// function selectedState() {
+//   const selectedPark = document.querySelector("#parks").value;
+//   const selectedState = document.querySelector("#state").value;
+
+//   const stateDisplayData = filterStateData(selectedState, selectedPark);
+//   displayData(stateDisplayData);
+// }

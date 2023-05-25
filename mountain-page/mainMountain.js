@@ -33,7 +33,7 @@ function mountainChange() {
   for (const mountain of mountainsArray) {
     if (currentMountain === mountain.name) {
       mountainInfo.innerHTML = `<img src = "mountain-images/${mountain.img}"> ${mountain.desc} 
-      The effort for this hike is <strong>${mountain.effort}</strong>! <br><br>Latitude: ${mountain.coords.lat} 
+      The mountain effort <strong>${mountain.effort}</strong>! <br><br>Latitude: ${mountain.coords.lat} 
       <br>Longitude: ${mountain.coords.lng}`;
     }
   }
