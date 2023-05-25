@@ -1,9 +1,44 @@
-.mainnav {
-  display: flex;
-  justify-content: center;
+@font-face {
+  font-family: 'North Face' ;
+  src: url(../capstone-pj/fonts/north-face/NorthFace.ttf);
+}
+
+body{
+  background-color: #3c4b2f;
 }
 
 h1 {
   display: flex;
   justify-content: center;
+  margin-top: 1rem;
+  font-family: 'North Face';
+  color: #adb836;
+  margin: 2rem;
+  text-align: center;
 }
+
+.body-text {
+  display: flex;
+  margin: 2rem 5rem 5rem 5rem;
+  color: antiquewhite;
+  font-size: large;
+  text-align: center;
+}
+
+/* .intro-text {
+
+} */
+
+#map {
+  display: flex;
+  justify-content: center;
+  height: 400px;
+  margin: 2rem 2rem 3rem 2rem;
+  padding:0;
+}
+
+h3{
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+

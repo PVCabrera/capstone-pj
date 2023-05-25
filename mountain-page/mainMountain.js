@@ -3,21 +3,24 @@ window.onload = main;
 
 // function which runs state Drop-down
 function main() {
-  loadMoutainsDropdownList();
+  loadMountainsDropdownList();
 }
 
 // --------------------------------------------------------
 // Mountain Page JS
-function loadMoutainsDropdownList() {
+function loadMountainsDropdownList() {
   const selectElement = document.querySelector("#mountain-selection");
   selectElement.onchange = mountainChange;
 
   for (const mountain of mountainsArray) {
+    // creates a new tag for options
     const option = document.createElement("option");
 
+    // adds the values to the html option tag
     option.value = mountain.name;
     option.innerText = mountain.name;
-
+    
+    // adds option to eachother from the array
     selectElement.append(option);
   }
 }
@@ -34,5 +37,5 @@ function mountainChange() {
       <br>Longitude: ${mountain.coords.lng}`;
     }
   }
-  selectElement.addEventListener("change", mountainChange);
 }
+

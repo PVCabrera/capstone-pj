@@ -528,26 +528,3 @@ const mountainsArray = [
     },
   },
 ];
-
-
-
-
-// Change Event
-
-// function mountainChange(changeEvent) {
-//   const parentElement = document.querySelector("main");
-//   const selectedMountainByUser = changeEvent.target.value;
-//   // const matchedMountain = findParkData(selectedMountainByUser);
-//   console.log(selectedMountain);
-
-//   parentElement.replaceChild();
-
-//   for (mountainsArray.name of mountainsArray) {
-//     const imageElement = document.createElement("img");
-
-//     imageElement.setAttribute(
-//       "src",
-//       `mountain-images/${selectedMountainByUser}/`
-//     );
-//   }
-// }
