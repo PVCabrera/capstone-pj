@@ -25,7 +25,7 @@
 
 <body>
   <!-- Nav Bar -->
-  <nav class="navbar navbar-expand-lg navbar-dark shadow-4-strong">
+  <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container-fluid">
       <a class="navbar-brand" href="../"><i class="fa-solid fa-person-hiking"> Enter The
           Outdoors</i></a>
@@ -42,27 +42,28 @@
     </div>
   </nav>
 
+  <h1>Mountain Information</h1>
+
   <!-- Dropdown page -->
-  <label for="mountain-selection">Search by name:</label>
-  <select name="mountain-selection" id="mountain-selection">
-    <option value="">Search by mountain name</option>
-  </select>
-  <label for="mountain-effort">Search by effort:</label>
-  <select name="mountain-effort" id="mountain-effort">
-    <option value="">select</option>
-  </select>
+  <div class="select-orient">
+    <select id="mountain-selection" class="form-select form-select-sm" name="mountain-selection">
+      <option selected>Search by mountain name</option>
+      <option value=""></option>
+    </select>
+  </div>
 
   <!-- Data from national park page -->
-  <h3>Mountain Information</h3>
-  <main></main>
+  <main>
+    <div class="times"></div>
+  </main>
   <!--Footer for page-->
   <footer class="footer">
     <div class="container">
       <div class="footer-links">
         <ul>
           <li><a href="../">Home</a></li>
-          <li><a href="../capstone-pj/national-pk-search/">National Park Search</a></li>
-          <li><a href="/furniture/">Mountain Search</a></li>
+          <li><a href="../national-pk-search/index.html">National Park Search</a></li>
+          <li><a href="../mountain-page/index.html">Mountain Search</a></li>
         </ul>
       </div>
       <div class="footer-copyright">

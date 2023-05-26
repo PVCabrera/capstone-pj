@@ -1,24 +1,75 @@
+html {
+  height: 100%
+}
+
+@font-face {
+  font-family: 'North Face' ;
+  src: url(../fonts/north-face/NorthFace.ttf);
+  
+  font-family: 'Autumn';
+  src: url(../fonts/meditative/Meditative.ttf);
+
+  font-family: 'Mainsan';
+  src: url(../fonts/mainsan/Mainsan.ttf)
+}
+
+main{
+  min-height: calc(150vh - 150px);
+}
+
 body{
+  background-image: url(./mountain-bg/tom-podmore-eNWJIJeLnbk-unsplash.jpg);
+  background-size: cover;
   background-color: rgb(171, 171, 135);
+  overflow-x:hidden;
+}
+
+h1{
+  margin: 2rem 0 5rem 0;
+  text-align: center;
+  font-stretch:extra-expanded;
+  color: #ebe3e3;
+  font-family: 'Mainsan';
+  font-weight: 300;
+  font-size: 3rem;
+}
+
+.select-orient {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+}
+
+#mountain-selection {
+  margin-right:5rem;
+  margin-left: 5rem;
+  max-width: 25rem;
+}
+
+.card-img-top {
+  height: 25rem;
+}
+
+.card {
+  max-width: 450px;
+  text-align: center;
+  margin:auto;
+  margin-bottom: 5rem;
 }
 
 footer {
-  background-color: #02000089;
-  width: auto;
+  background-color: #000d12a0;
   padding:20px;
   padding-bottom:2rem;
-  margin-left: auto;
   margin-bottom: 0;
   margin-top: auto;
 }
-
 .container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  
-  margin: 0 auto;
 }
 
 .footer-links {
@@ -69,4 +120,8 @@ footer {
 
 .fa-person-hiking {
   color: #fff;
+}
+
+.navbar-brand{
+  white-space:normal;
 }

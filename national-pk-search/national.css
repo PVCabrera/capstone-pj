@@ -1,9 +1,17 @@
-html {
-  height: 100%;
-}
 @font-face {
+  font-family: 'North Face' ;
+  src: url(../fonts/north-face/NorthFace.ttf);
+  
+  font-family: 'Autumn';
+  src: url(../fonts/meditative/Meditative.ttf);
   font-family: "Preparatori-Bold";
   src: url(../fonts/preparatori/Preparatori-Bold.ttf);
+  font-family: 'Mainsan';
+  src: url(../fonts/mainsan/Mainsan.ttf);
+}
+
+main{
+  min-height: calc(150vh - 150px);
 }
 
 body {
@@ -11,7 +19,9 @@ body {
   background-image: url(../national-pk-search/images-national/miguel-carraca-Yfbg-D-9kjo-unsplash.jpg);
   background-color: rgb(143, 112, 52);
   background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
+  overflow-x:hidden;
 }
 
 .select-items {
@@ -24,10 +34,31 @@ body {
   padding-left: 1rem;
 }
 
-h3 {
-  margin-top: 3rem;
+#state-selection{
+  margin-left: 3rem;
+  margin-right:2rem;
+}
+
+#park-type{
+  margin-right:3rem;
+  margin-left: 2rem;
+}
+
+h1{
+  margin: 2rem 0 5rem 0;
   text-align: center;
-  margin-bottom: 2rem;
+  color: #ebe3e3;
+  font-stretch:extra-expanded;
+  font-family: 'Mainsan';
+  font-weight: 300;
+  font-size: 3rem;
+}
+
+h5{
+  text-align: center;
+  margin-bottom: 3rem;
+  line-height: 3rem;
+  font-weight: 400;
 }
 
 #main {
@@ -44,12 +75,17 @@ h2 {
   font-size: 3rem;
 }
 
+h5{
+  color: #fff;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  display: flex;
+  justify-content: center;
+}
+
 footer {
-  background-color: #02000089;
+  background-color: #000d12a0;
   padding:20px;
   padding-bottom:2rem;
-  /* text-align: center; */
-  margin-left: auto;
   margin-bottom: 0;
   margin-top: auto;
 }
@@ -111,4 +147,8 @@ footer {
 
 .fa-person-hiking {
   color: #fff;
+}
+
+.navbar-brand{
+  white-space:normal;
 }

@@ -3,30 +3,26 @@ window.onload = main;
 
 // function which runs state Drop-down
 function main() {
-  loadStatesDropdownList(locationsArray);
-  addStatesToDropdownList();
-  loadParksDropdownList(locationsArray);
-  addParksToDropdownList();
+  loadStatesDropdownList();
+  loadParksDropdownList();
 }
 // ---------------------------------------------------------------------
 
 // Search By State
 
-function loadStatesDropdownList(locationArrayStateSelections) {
-  let stateNames = "";
-  for (i = 0; i < locationArrayStateSelections.length; i += 1) {
-    const stateString = locationArrayStateSelections[i];
-    stateNames += `<option value=${stateString}>${stateString}</option>`;
-  }
-  return stateNames;
-}
-
-function addStatesToDropdownList() {
+function loadStatesDropdownList() {
   const selectStateElement = document.querySelector("#state-selection");
-
-  selectStateElement.innerHTML = loadStatesDropdownList(locationsArray);
+  console.log("selectStateElement:", selectStateElement);
 
   selectStateElement.onchange = stateChange;
+
+  for (const state of locationsArray) {
+    console.log("state:", state);
+    const option = document.createElement("option");
+    option.value = state;
+    option.innerText = state;
+    selectStateElement.append(option);
+  }
 }
 
 function stateChange(changeEvent) {
@@ -66,9 +62,9 @@ function stateChange(changeEvent) {
   });
 }
 
-function filterParkData(selectedState) {
+function filterParkData(selectedStateByUser) {
   const parksByState = nationalParksArray.filter(
-    (parkObject) => parkObject.State === selectedState
+    (parkObject) => parkObject.State === selectedStateByUser
   );
   return parksByState;
 }
@@ -77,25 +73,20 @@ function filterParkData(selectedState) {
 
 // Search By Park
 
-function loadParksDropdownList(parkTypesArrayParkSelections) {
-  let parkTypes = "";
-  for (i = 0; i < parkTypesArrayParkSelections.length; i += 1) {
-    const parkString = parkTypesArrayParkSelections[i];
-    parkTypes += `<option value=${parkString}>${parkString}</option>`;
+function loadParksDropdownList() {
+  const selectStateElement = document.querySelector("#park-type");
+  console.log("selectStateElement:", selectStateElement);
+
+  selectStateElement.onchange = parkChange;
+
+  for (const park of parkTypesArray) {
+    console.log("park:", park);
+    const option = document.createElement("option");
+    option.value = park;
+    option.innerText = park;
+    selectStateElement.append(option);
   }
-  return parkTypes;
 }
-
-function addParksToDropdownList() {
-  const selectParkElement = document.querySelector("#park-type");
-
-  selectParkElement.innerHTML = loadParksDropdownList(parkTypesArray);
-
-  selectParkElement.onchange = parkChange;
-}
-
-// Park Change Event
-// -------------------------------------------------------------------
 
 function parkChange(changeEvent) {
   const parentElement = document.querySelector("main");
@@ -126,9 +117,22 @@ function parkChange(changeEvent) {
     localAddress.innerText = `Address: ${element.Address}`;
     parkDeets.appendChild(localAddress);
 
+    // if (element.Visit !== undefined) {
+    //   const elementVisit = document.createElement("p");
+    //   const visitLink = document.createElement("a");
+    //   elementVisit.innerText = `Visit: ${element.Visit}`;
+    //   parkDeets.appendChild(elementVisit);
+    // }
+
     if (element.Visit !== undefined) {
       const elementVisit = document.createElement("p");
-      elementVisit.innerText = `Visit: ${element.Visit}`;
+      const visitLink = document.createElement("a");
+      visitLink.href = element.Visit;
+      visitLink.textContent = "Visit";
+      visitLink.addEventListener("click", function() {
+        window.open(visitLink.href, "_blank");
+      });
+      elementVisit.appendChild(visitLink);
       parkDeets.appendChild(elementVisit);
     }
     parentElement.appendChild(parkDeets);
@@ -141,23 +145,3 @@ function filterParkTypeByData(selectedParkByUser) {
   );
   return parksByParkType;
 }
-
-// -------------------------------------------------------------------------
-
-// Search using both boxes
-
-// function selectedPark() {
-//   const selectedPark = document.querySelector("#parks").value;
-//   const selectedState = document.querySelector("#state").value;
-
-//   const parkDisplayData = filterParkData(selectedPark, selectedState);
-//   displayData(parkDisplayData);
-// }
-
-// function selectedState() {
-//   const selectedPark = document.querySelector("#parks").value;
-//   const selectedState = document.querySelector("#state").value;
-
-//   const stateDisplayData = filterStateData(selectedState, selectedPark);
-//   displayData(stateDisplayData);
-// }
