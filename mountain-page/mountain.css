@@ -20,6 +20,8 @@ main{
 body{
   background-image: url(./mountain-bg/tom-podmore-eNWJIJeLnbk-unsplash.jpg);
   background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
   background-color: rgb(171, 171, 135);
   overflow-x:hidden;
 }
