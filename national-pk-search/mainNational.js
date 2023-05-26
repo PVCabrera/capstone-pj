@@ -12,12 +12,12 @@ function main() {
 
 function loadStatesDropdownList() {
   const selectStateElement = document.querySelector("#state-selection");
-  console.log("selectStateElement:", selectStateElement);
+  // console.log("selectStateElement:", selectStateElement);
 
   selectStateElement.onchange = stateChange;
 
   for (const state of locationsArray) {
-    console.log("state:", state);
+    // console.log("state:", state);
     const option = document.createElement("option");
     option.value = state;
     option.innerText = state;
@@ -55,9 +55,14 @@ function stateChange(changeEvent) {
 
     if (element.Visit !== undefined) {
       const elementVisit = document.createElement("p");
-      elementVisit.innerText = `Visit: ${element.Visit}`;
+      const visitLink = document.createElement("a");
+      visitLink.href = element.Visit;
+      visitLink.innerHTML = `Visit: <a href="${element.Visit}" target="_blank">${element.Visit}</a>`;
+      elementVisit.appendChild(visitLink);
       parkDeets.appendChild(elementVisit);
     }
+
+    
     parentElement.appendChild(parkDeets);
   });
 }
@@ -75,12 +80,12 @@ function filterParkData(selectedStateByUser) {
 
 function loadParksDropdownList() {
   const selectStateElement = document.querySelector("#park-type");
-  console.log("selectStateElement:", selectStateElement);
+  // console.log("selectStateElement:", selectStateElement);
 
   selectStateElement.onchange = parkChange;
 
   for (const park of parkTypesArray) {
-    console.log("park:", park);
+    // console.log("park:", park);
     const option = document.createElement("option");
     option.value = park;
     option.innerText = park;
@@ -117,25 +122,17 @@ function parkChange(changeEvent) {
     localAddress.innerText = `Address: ${element.Address}`;
     parkDeets.appendChild(localAddress);
 
-    // if (element.Visit !== undefined) {
-    //   const elementVisit = document.createElement("p");
-    //   const visitLink = document.createElement("a");
-    //   elementVisit.innerText = `Visit: ${element.Visit}`;
-    //   parkDeets.appendChild(elementVisit);
-    // }
 
     if (element.Visit !== undefined) {
       const elementVisit = document.createElement("p");
       const visitLink = document.createElement("a");
       visitLink.href = element.Visit;
-      visitLink.textContent = "Visit";
-      visitLink.addEventListener("click", function() {
-        window.open(visitLink.href, "_blank");
-      });
+      visitLink.innerHTML = `Visit: <a href="${element.Visit}" target="_blank">${element.Visit}</a>`;
       elementVisit.appendChild(visitLink);
       parkDeets.appendChild(elementVisit);
     }
     parentElement.appendChild(parkDeets);
+    console.log(`Visit:`, element.Visit);
   });
 }
 
