@@ -54,6 +54,13 @@ h1{
   font-size: 6rem;
 }
 
+@media screen and (max-width: 400px) {
+  
+  h1{
+    font-size: 4rem;
+  }
+}
+
 
 h2 {
   font-family: "Preparatori-Bold";
@@ -67,6 +74,11 @@ h2 {
   margin-right: 2rem;
   color: rgb(245, 243, 240);
   font-weight: 600;
+}
+
+.parkDeets{
+  background-color: #00000045;
+  padding: 2rem; 
 }
 
 h5{

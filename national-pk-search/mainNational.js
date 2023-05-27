@@ -114,9 +114,13 @@ function filterData() {
     button.addEventListener("click", buttonChange);
     parkDeets.appendChild(button);
 
+    
+    // Appends all extracted that were added to the div to the main tag (IMPORTANT)
     parentElement.appendChild(parkDeets);
-  });
+
+  }); 
 }
+
 
 function buttonChange() {
 
@@ -144,7 +148,7 @@ function buttonChange() {
   // Create the card image
   const cardImage = document.createElement("img");
   cardImage.classList.add("card-img-top");
-  cardImage.setAttribute("src", `/state-img/${photoName}`); // Replace with the path to your photos folder
+  cardImage.setAttribute("src", "state-img/" + photoName); // Path to state-img 
   cardImage.alt = "Park Photo";
   photoCard.appendChild(cardImage);
 

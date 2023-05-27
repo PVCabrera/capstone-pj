@@ -36,6 +36,14 @@ h1{
   font-size: 6rem;
 }
 
+@media screen and (max-width: 400px) {
+  
+  h1{
+    font-size: 4rem;
+  }
+}
+
+
 .select-orient {
   display: flex;
   justify-content: center;
