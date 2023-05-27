@@ -32,6 +32,13 @@ h1 {
   text-align: center;
 }
 
+@media screen and (max-width: 450px) { 
+  .body-text{
+    margin-left: 1.6rem;
+    margin-right: 1.6rem;
+  }
+}
+
 .intro-text {
   color: #d3a612;
   font-size: larger;

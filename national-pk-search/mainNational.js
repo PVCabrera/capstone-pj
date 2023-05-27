@@ -69,7 +69,9 @@ function filterData() {
         parkObject.LocationName.includes(selectedParkType)
     );
   } else if (selectedState) {
-    filteredData = filteredData.filter((parkObject) => parkObject.State === selectedState);
+    filteredData = filteredData.filter(
+      (parkObject) => parkObject.State === selectedState
+    );
   } else if (selectedParkType) {
     filteredData = filteredData.filter((parkObject) =>
       parkObject.LocationName.includes(selectedParkType)
@@ -105,13 +107,60 @@ function filterData() {
       parkDeets.appendChild(elementVisit);
     }
 
+    const button = document.createElement("button");
+    button.id = "btn-img";
+    button.classList.add("btn", "btn-dark");
+    button.innerText = "View Photo";
+    button.addEventListener("click", buttonChange);
+    parkDeets.appendChild(button);
+
     parentElement.appendChild(parkDeets);
   });
 }
 
+function buttonChange() {
 
+  // Create the menu container
+  const menuContainer = document.createElement("div");
+  menuContainer.classList.add("menu-container");
 
+  // Create the blurred background
+  const blurredBackground = document.createElement("div");
+  blurredBackground.classList.add("blurred-background");
+  menuContainer.appendChild(blurredBackground);
 
+  // Create the menu content
+  const menuContent = document.createElement("div");
+  menuContent.classList.add("menu-content");
 
+  // Create the photo card
+  const photoCard = document.createElement("div");
+  photoCard.classList.add("card");
 
+  // Retrieve the photo name from nationalParksArray
+  const photoName = nationalParksArray.Image; // Replace with the actual photo name from the array
+  // console.log(nationalParksArray);
+  
+  // Create the card image
+  const cardImage = document.createElement("img");
+  cardImage.classList.add("card-img-top");
+  cardImage.setAttribute("src", `/state-img/${photoName}`); // Replace with the path to your photos folder
+  cardImage.alt = "Park Photo";
+  photoCard.appendChild(cardImage);
 
+  // Append the photo card to the menu content
+  menuContent.appendChild(photoCard);
+
+  // Append the menu content to the menu container
+  menuContainer.appendChild(menuContent);
+
+  // Append the menu container to the document body
+  document.body.appendChild(menuContainer);
+
+  // Close the menu when clicking outside the menu content
+  blurredBackground.addEventListener("click", function (event) {
+    if (event.target === blurredBackground) {
+      menuContainer.remove();
+    }
+  });
+}
