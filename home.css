@@ -81,6 +81,17 @@ h3{
   padding-right: 1rem;
 }
 
+.form-outline{
+  display: flex;
+  justify-content: center;
+}
+
+#search-bar {
+  text-align: center;
+  width: 300px;
+  margin-top: 10px;
+}
+
 footer {
   background-color: #02000089;
   padding: 20px;

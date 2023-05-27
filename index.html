@@ -18,7 +18,7 @@
     crossorigin="anonymous"></script>
   <!-- Google API JS-->
   <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwMNKWwSmn21jrlJgmaXOoM09klp3nrwU&callback=initMap"></script>
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwMNKWwSmn21jrlJgmaXOoM09klp3nrwU&libraries=places&callback=initMap"></script>
   <!-- Icon Kits -->
   <script defer src="https://kit.fontawesome.com/708d681e86.js" crossorigin="anonymous"></script>
   <!-- JS Script -->
@@ -113,6 +113,10 @@
   </div>
 
   <h3>Feel free to utilize the nifty map below to see park locations all over the US!</h3>
+  <!-- Map -->
+  <div class="form-outline">
+    <input type="text" id="search-bar" class="form-control" placeholder="Search on the map">
+  </div>
   <div id="map"></div>
 
   <!--Footer for page-->
