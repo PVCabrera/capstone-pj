@@ -25,6 +25,7 @@ body {
 
 #bg{
   background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
   overflow-x:hidden;
 
@@ -67,10 +68,6 @@ h1{
   }
 }
 
-button {
-  position: sticky;
-}
-
 h2 {
   font-family: "Preparatori-Bold";
   font-size: 3rem;
@@ -86,8 +83,9 @@ h2 {
 }
 
 .parkDeets{
-  background-color: #0000007b;
+  background-color: #0b0b0b69;
   padding: 2rem;
+  position: relative;
   display: inline-table;
   border-radius: 20px;
   margin: 1rem;
