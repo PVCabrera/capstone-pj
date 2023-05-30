@@ -70,7 +70,7 @@ h1{
 
 h2 {
   font-family: "Preparatori-Bold";
-  font-size: 3rem;
+  font-size: rem;
 }
 
 #main {
@@ -92,12 +92,11 @@ h2 {
 .parkDeets{
   background-color: #0b0b0b69;
   padding: 2rem;
-  position: relative;
-  display: inline-table;
+  display: inline-flex;
+  flex-direction: column;
   border-radius: 20px;
   margin: 1rem;
-  max-width: 350px;
-  max-height: 600px; 
+  max-width: 380px;
 }
 
 h5{

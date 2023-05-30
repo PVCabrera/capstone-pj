@@ -171,9 +171,7 @@ function buttonClick(parkID) {
 
   // Gets the photo from the array
   const photoName =
-    photoObj[0]["Image"] != null
-      ? photoObj[0]["Image"]
-      : "./state-img/user.png";
+    photoObj[0]["Image"] != null ? photoObj[0]["Image"]: "./state-img/user.png";
   console.log(photoObj[0]["Image"])
 
   // Create the card image
