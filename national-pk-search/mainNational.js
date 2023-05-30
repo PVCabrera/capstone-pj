@@ -118,6 +118,11 @@ function filterData() {
     });
     parkDeets.appendChild(button);
 
+    const buttonHolder = document.createElement("div")
+    buttonHolder.classList.add("buttonDiv")
+    buttonHolder.appendChild(button)
+    parkDeets.appendChild(buttonHolder)
+   
     // Appends all extracted that were added to the div to the main tag (IMPORTANT)
     parentElement.appendChild(parkDeets);
   });
