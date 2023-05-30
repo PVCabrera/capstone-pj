@@ -65,9 +65,11 @@ h1{
   h1{
     font-size: 4rem;
   }
-
 }
 
+button {
+  position: sticky;
+}
 
 h2 {
   font-family: "Preparatori-Bold";
@@ -84,8 +86,14 @@ h2 {
 }
 
 .parkDeets{
-  background-color: #00000045;
-  padding: 2rem; 
+  background-color: #0000007b;
+  padding: 2rem;
+  display: inline-table;
+  border-radius: 20px;
+  margin: 1rem;
+  max-width: 350px;
+  min-height: 600px;
+  
 }
 
 h5{
