@@ -17,7 +17,6 @@ main{
 body {
   min-height: 100%;
   background-image: url(../national-pk-search/images-national/miguel-carraca-Yfbg-D-9kjo-unsplash.jpg);
-  background-color: rgb(143, 112, 52);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -26,8 +25,8 @@ body {
 
 #bg{
   background-size: cover;
-  background-position: center;
   background-repeat: no-repeat;
+  overflow-x:hidden;
 
 }
 

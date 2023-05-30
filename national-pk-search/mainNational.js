@@ -1,7 +1,7 @@
 // onload run the main function
 window.onload = main;
 
-let selectedState = "";
+let selectedStateByUser = "";
 let selectedParkType = "";
 
 // function which runs state Drop-down
@@ -27,11 +27,11 @@ function loadStatesDropdownList() {
 }
 
 function stateChange() {
-  selectedState = document.querySelector("#state-selection").value;
+  selectedStateByUser = document.querySelector("#state-selection").value;
   filterData();
-  changeBg(imagesArray);
+  changeBg();
 }
-
+ 
 // ----------------------------------------------------------------------
 
 // Search By Park
@@ -63,15 +63,15 @@ function filterData() {
 
   let filteredData = nationalParksArray;
 
-  if (selectedState && selectedParkType) {
+  if (selectedStateByUser && selectedParkType) {
     filteredData = filteredData.filter(
       (parkObject) =>
-        parkObject.State === selectedState &&
+        parkObject.State === selectedStateByUser &&
         parkObject.LocationName.includes(selectedParkType)
     );
-  } else if (selectedState) {
+  } else if (selectedStateByUser) {
     filteredData = filteredData.filter(
-      (parkObject) => parkObject.State === selectedState
+      (parkObject) => parkObject.State === selectedStateByUser
     );
   } else if (selectedParkType) {
     filteredData = filteredData.filter((parkObject) =>
@@ -119,55 +119,29 @@ function filterData() {
     parkDeets.appendChild(button);
 
     // Appends all extracted that were added to the div to the main tag (IMPORTANT)
-
     parentElement.appendChild(parkDeets);
   });
 }
 
+// Change Background on State Change
 
-
-// Will change background depending on users selected state
-
-// function changeBg(selectedStateIndex) {
-//   let stateNamesArray = locationsArray;
-//   // console.log(stateNamesArray)
-
-//   let imagesLocArray = imagesArray;
-//   // console.log(imagesLocArray)
-
-//   let photoFind = stateNamesArray.find((match) => match[selectedStateIndex] == imagesLocArray.State);
-//   console.log(photoFind);
-
-//   if (photoFind) {
-//     let imageUrl = `./states-bg-img/${photoFind}.jpg`;
-//     document.getElementById("bg").style.backgroundImage = `url('${imageUrl}')`;
-//   }
-// }
-
-function changeBg(selectedStateIndex) {
-  let stateNamesArray = locationsArray;
-  let imagesLocArray = imagesArray[selectedStateIndex];
-
-  if (imagesLocArray && imagesLocArray.State) {
-    let photoFind = stateNamesArray.find((match) => match === imagesLocArray.State);
-    console.log('photoFind:', photoFind);
-
-    if (photoFind) {
-      let imageUrl = `./states-bg-img/${photoFind}.jpg`;
-      console.log('imageUrl:', imageUrl);
-      document.getElementById("bg").style.backgroundImage = `url('${imageUrl}')`;
-    } else {
-      console.log('No matching state name found.');
-    }
+function changeBg() {
+  let stateSelection = document.querySelector("#state-selection");
+  let selectedState = stateSelection.value;
+  
+  let imagesLocArray = locationsArray.find((item) => item === selectedState);
+  
+  if (imagesLocArray) {
+    let imageUrl = `./states-bg-img/${selectedState}.jpg`;
+    console.log('imageUrl:', imageUrl);
+    document.getElementById("bg").style.backgroundImage = `url('${imageUrl}')`;
   } else {
-    console.log('Invalid imagesLocArray or missing State property.');
+    console.log('No matching state name found.');
   }
 }
 
-
 function buttonClick(parkID) {
-  // console.log(parkID);
-
+  console.log(parkID)
   // Create the menu container
   const menuContainer = document.createElement("div");
   menuContainer.classList.add("menu-container");
@@ -195,7 +169,7 @@ function buttonClick(parkID) {
     photoObj[0]["Image"] != null
       ? photoObj[0]["Image"]
       : "./state-img/user.png";
-  // console.log(photoObj[0]["Image"])
+  console.log(photoObj[0]["Image"])
 
   // Create the card image
   const cardImage = document.createElement("img");

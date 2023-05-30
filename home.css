@@ -1,12 +1,15 @@
 @font-face {
-  font-family: 'NorthFace' ;
-  src: url(../capstone-pj/fonts/north-face/NorthFace.ttf);
+  font-family: 'North Face' ;
+  src: url(./fonts/north-face/NorthFace.ttf);
   
   font-family: 'Meditative';
-  src: url(../capstone-pj/fonts/meditative/Meditative.ttf);
+  src: url(./fonts/meditative/Meditative.ttf);
 
   font-family: 'Mainsan';
-  src: url(../capstone-pj/fonts/mainsan/Mainsan.ttf)
+  src: url(./fonts/mainsan/Mainsan.ttf);
+
+  font-family: 'Autumn';
+  src: url(./fonts/autumn/Autumn\ in\ November.ttf);
 }
 
 body{
@@ -43,7 +46,6 @@ h1 {
   color: #d3a612;
   font-size: larger;
   font-weight: 600;
-  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 #map {
@@ -55,7 +57,7 @@ h1 {
 }
 
 h3{
-  font-family: 'Autumn';
+  font-family: 'Meditative';
   margin-left: 2rem;
   margin-right: 2rem;
   text-align: center;

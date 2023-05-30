@@ -3,10 +3,7 @@ html {
 }
 
 @font-face {
-  font-family: 'NorthFace' ;
-  src: url(../fonts/north-face/NorthFace.ttf);
-  
-  font-family: 'Autumn';
+  font-family: 'Meditative';
   src: url(../fonts/meditative/Meditative.ttf);
 
   font-family: 'Mainsan';
@@ -66,6 +63,17 @@ h1{
   text-align: center;
   margin:auto;
   margin-bottom: 5rem;
+  background-color: rgba(255, 253, 253, 0.649);
+}
+
+.card-title {
+  margin-top: 1rem;
+  font-family: 'Mediatative';
+  font-size: x-large;
+}
+
+#times {
+  background-color: #ffffff00;
 }
 
 footer {
